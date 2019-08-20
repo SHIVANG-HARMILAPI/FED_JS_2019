@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+    form{
+    display: inline;
+    }
+    
+    form .button{
+      background-color: cornflowerblue;
+      border-radius:4px;
+      font-size: 19px; 
+    }
+    
+    </style>
+</head>
+<body>
+    <header>
+            <h1><u>Tavisca Solutions Pvt. Ltd.</u></h1>
+    </header>
+    <div class="container">
+    <div class="sideMenuBar">
+      <ul>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('home');" >Home</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('news');">News</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('contact');">Contact</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('about');">About</a></li>
+      </ul>
+    </div>
+    <div class="container-right">
+      <div>
+        <form > 
+          <input type="text">
+          <input type="button" class="button" value="Search"id="Search">
+          <input type="button" class="button" value="Add" id="Add">
+        </form>
+      </div>
+        <div id="home" class="content" style="display: none ;" onfocus="return populateTodoList();" >
+           <p> This is Home Division..</p>
+        </div>
+        <div id="news" class="content" style="display: none;" >
+            <p>This is News Division..</p>
+        </div>
+        <div id="contact" class="content" style="display: none;">
+              <p>This is Contact Division..</p>
+        </div>
+        <div id="about" class="content" style="display: none">
+              <p>This is About Division..</p>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <h4>All Copyrights to this application have been reserved by @Tavisca</h4>
+    </footer>
+    <script src="javascript.js"></script>
+  </body>
+
+</html>
