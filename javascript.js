@@ -17,6 +17,47 @@ function func(ele)
 }
 
 
+function hidePrompt()
+
+{
+
+  let a = document.getElementsByClassName("itemlist");
+
+  for (i = 0; i < a.length; i++)
+
+  {
+
+    a[i].style.display = "none";
+
+
+
+  }
+
+}
+
+
+
+function filterFunction()
+{
+  let input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  console.log(filter);
+  a = document.getElementsByClassName("itemlist");
+  for (i = 0; i < a.length; i++)
+  {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (!txtValue.startsWith(filter))
+    {
+      a[i].style.display = "none";
+    }
+    else
+    {
+      a[i].style.display = "block";
+    }
+  }
+}
+
 function populateTodoList()
 {const fs = require('fs');
 const json_data = require('../todo.JSON');

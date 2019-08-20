@@ -33,13 +33,14 @@
     <div class="container-right">
       <div>
         <form > 
-          <input type="text">
+          <input type="text" id="myInput"  onkeyup="filterFunction()" onblur="hidePrompt()">
           <input type="button" class="button" value="Search"id="Search">
           <input type="button" class="button" value="Add" id="Add">
         </form>
+        <div id="myInputautocomplete-list" class="autocomplete-items" style="width:240px; display: block" ></div>
       </div>
         <div id="home" class="content" style="display: none ;" onfocus="return populateTodoList();" >
-          <table>
+          <table id="myTable">
             <tr>
               <th>Tasks </th>
               <th>Status </th>
