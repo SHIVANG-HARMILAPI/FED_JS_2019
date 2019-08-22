@@ -16,6 +16,7 @@
     }
     
     </style>
+    <script src="javascript.js"></script>
 </head>
 <body>
     <header>
@@ -24,54 +25,47 @@
     <div class="container">
     <div class="sideMenuBar">
       <ul>
-        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('home');" >Home</a></li>
-        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('news');">News</a></li>
-        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('contact');">Contact</a></li>
-        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('about');">About</a></li>
+        <li ><a  class="listitems active" href="javascript:void(0)" onclick="return func('todo');"  >Todo</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('user');">User</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('display');">Display</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('logout');">Logout</a></li>
       </ul>
     </div>
     <div class="container-right">
       <div>
-        <form > 
-          <input type="text" id="myInput"  onkeyup="filterFunction()" onblur="hidePrompt()">
-          <input type="button" class="button" value="Search"id="Search">
-          <input type="button" class="button" value="Add" id="Add">
+        <form id="searchwork"> 
+          <!-- <input type="text" id="myInput"  onkeyup="filterFunction()" onblur="hidePrompt()"> -->
+          <input type="text" name="input" id="input">
+          <script>
+            autocomplete(document.getElementById("input"), countries);
+          </script>
+          <input type="button" class="button" value="Search"id="Search" >
+          <input type="button" class="button" value="Add" id="Add" onclick="insRow()">
         </form>
         <div id="myInputautocomplete-list" class="autocomplete-items" style="width:240px; display: block" ></div>
       </div>
-        <div id="home" class="content" style="display: none ;" onfocus="return populateTodoList();" >
-          <table id="myTable">
-            <tr>
-              <th>Tasks </th>
-              <th>Status </th>
-            </tr>
-            <tr>
-              <td>Task 1</td>
-              <td>Done</td>
+        <div id="todo" class="content" style="display: block ;" onfocus="return populateTodoList();" >
+         <br/>
+         <br/>
+       
+          <table id="POITable">
+            <tr id="tr0" style="display: none">
              
+              <td id="td1" ><p>Hello</p></td>
+              
+              <td id="td2" ><a href="javascript:void(0)" id="editbutton" onclick="updateDetail(this)">Edit</a></td>
+              <td id="td3" ><a href="javascript:void(0)" id="delbutton" onclick="deleteRow(this)">Delete</a></td>
             </tr>
-            <tr>
-              <td>Task 2</td>
-              <td>Done</td>
-             
-            </tr>
-            <tr>
-              <td>Task 3</td>
-              <td><a href="javascript:void(0)" onclick="">Check to mark status as done..</a></td>
-            </tr>
-            <tr>
-              <td>Task 4</td>
-              <td><a href="javascript:void(0)" onclick="">Check to mark status as done..</a></td>
-            </tr>
+            
           </table>
           </div>
-        <div id="news" class="content" style="display: none;" >
-            <p>This is News Division..</p>
+        <div id="user" class="content" style="display: none;" >
+            <p>This is User Division..</p>
         </div>
-        <div id="contact" class="content" style="display: none;">
+        <div id="display" class="content" style="display: none;">
               <p>This is Contact Division..</p>
         </div>
-        <div id="about" class="content" style="display: none">
+        <div id="logout" class="content" style="display: none">
               <p>This is About Division..</p>
         </div>
     </div>
@@ -79,7 +73,7 @@
     <footer>
         <h4>All Copyrights to this application have been reserved by @Tavisca</h4>
     </footer>
-    <script src="javascript.js"></script>
+    
   </body>
 
 </html>
