@@ -165,7 +165,7 @@ function updateDetail(cell)
   
   var person = prompt("Please enter your todo", "");
   
-  if(!checkIfElementAlreadyExist(cellContent) && person != null)
+  if(!checkIfElementAlreadyExist(person) && person != null)
   {
     deleteElementFromAutoPopulateArray(cellContent);
   // if (person != null) {
