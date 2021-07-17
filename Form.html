@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+    form{
+    display: inline;
+    }
+    
+    form .button{
+      background-color: cornflowerblue;
+      border-radius:4px;
+      font-size: 19px; 
+    }
+    
+    </style>
+    <script src="javascript.js"></script>
+</head>
+<body >
+    <header>
+            <h1><u>Tavisca Solutions Pvt. Ltd.</u></h1>
+    </header>
+    <div class="container" >
+    <div class="sideMenuBar">
+      <ul id="myul">
+        <li ><a  class="listitems active" href="javascript:void(0)" onclick="return func('todo');"  >Todo</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('user');">User</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return func('display');">Display</a></li>
+        <li><a  class="listitems" href="javascript:void(0)" onclick="return logout();">Logout</a></li>
+      </ul>
+    </div>
+    <div class="container-right">
+      <div>
+        <form id="searchwork"> 
+          <!-- <input type="text" id="myInput"  onkeyup="filterFunction()" onblur="hidePrompt()"> -->
+          <input type="text" name="input" id="input">
+          <script>
+            autocomplete(document.getElementById("input"), countries);
+          </script>
+          <input type="button" class="button" value="Search"id="Search" onclick="autoPopulateClick();" >
+          <input type="button" class="button" value="Add" id="Add" onclick="insRow()">
+        </form>
+        <!-- <div id="myInputautocomplete-list" class="autocomplete-items" style="width:240px; display: block" ></div>
+      </div> -->
+        <div id="todo" class="content" style="display: block ;" onfocus="return populateTodoList();" >
+        
+          <div style="overflow-y:auto;">
+          <table id="POITable">
+            <tr id="tr0">
+             <td id="td1" >Task</td>
+             <td id="td2">Edit</td>
+             <td id="td3">Delete</td>
+            </tr>
+            
+          </table>
+        </div>
+          </div>
+          <div id="searchTable" class="content" style="display: none">
+            <table id="searchTable-content">
+              <tr>
+               <td>Task</td>
+               <td>Edit</td>
+               <td>Delete</td>
+              </tr>
+            </table>
+          </div>
+        <div id="user" class="content" style="display: none;" >
+            <p>This is User Division..</p>
+        </div>
+        <div id="display" class="content" style="display: none;">
+              <p>This is Display Division..</p>
+        </div>
+        <!-- <div id="logout" class="content" style="display: none">
+              <p>This is About Division..</p>
+        </div> -->
+    </div>
+    
+    <footer>
+        <h4>All Copyrights to this application have been reserved by @Tavisca</h4>
+    </footer>
+    
+  </body>
+
+</html>
